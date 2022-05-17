@@ -13,7 +13,16 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
-
+    @IBAction func launchApp2(){
+        let customUrl = "App2Open://"
+        if let url = URL(string: customUrl){
+            if UIApplication.shared.canOpenURL(url){
+                UIApplication.shared.open(url)
+            }else{
+                print("url not found")
+            }
+        }
+    }
 
 }
 
